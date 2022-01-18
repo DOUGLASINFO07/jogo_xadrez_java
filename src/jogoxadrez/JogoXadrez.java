@@ -1,5 +1,6 @@
 package jogoxadrez;
 
+import bordgame.Position;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,15 +15,17 @@ import javafx.stage.Stage;
  */
 public class JogoXadrez extends Application {
     
+    Position position = new Position(5,15);
+    
     @Override
     public void start(Stage primaryStage) {
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText(position.toString());
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                System.out.println(position);
             }
         });
         
@@ -35,6 +38,8 @@ public class JogoXadrez extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    
+    
 
     /**
      * @param args the command line arguments
